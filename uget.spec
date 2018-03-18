@@ -3,7 +3,7 @@
 
 Summary:	Download manager that uses GTK+
 Name:		uget
-Version:	2.2.0
+Version:	2.2.1
 Release:	1
 Group:		Networking/File transfer
 License:	GPL
@@ -63,11 +63,5 @@ desktop-file-install \
 
 
 %find_lang %{name} 
-
-%changelog
-
-* Thu Jan 18 2018 survolog <survolog@yandex.ru> 2.2.0-1
-- (52c8836) Merge pull request #5 from vladi105/uget:rosa2016.1
-- (52c8836) Updated to version 2.2.0
 
 
