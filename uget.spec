@@ -63,5 +63,3 @@ desktop-file-install \
 
 
 %find_lang %{name} 
-
-
