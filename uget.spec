@@ -4,7 +4,7 @@
 Summary:	Download manager that uses GTK+
 Name:		uget
 Version:	2.2.1
-Release:	1
+Release:	2
 Group:		Networking/File transfer
 License:	GPL
 Url:		http://ugetdm.com/
