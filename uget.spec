@@ -3,8 +3,8 @@
 
 Summary:	Download manager that uses GTK+
 Name:		uget
-Version:	2.2.1
-Release:	2
+Version:	2.2.2
+Release:	1
 Group:		Networking/File transfer
 License:	GPL
 Url:		http://ugetdm.com/
@@ -23,6 +23,8 @@ BuildRequires:	pkgconfig(openssl)
 BuildRequires:	imagemagick
 BuildRequires:	pkgconfig(libpcre)
 Requires:	wget
+# aria2 is optional but make it recommends because it enable more download features
+Recommends:     aria2
 %rename		urlgfe
 %rename		urlget
 
@@ -51,10 +53,10 @@ that can be inherited by each download in that category.
         --with-gnutls \
         --without-openssl
 
-%make
+%make_build
 
 %install
-%makeinstall_std INSTALL="install -p"
+%make_install INSTALL="install -p"
 
 desktop-file-install \
         --dir %{buildroot}%{_datadir}/applications \
