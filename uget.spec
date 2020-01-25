@@ -3,12 +3,12 @@
 
 Summary:	Download manager that uses GTK+
 Name:		uget
-Version:	2.2.2
+Version:	2.2.3
 Release:	1
 Group:		Networking/File transfer
 License:	GPL
 Url:		http://ugetdm.com/
-Source0:	http://downloads.sourceforge.net/urlget/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/urlget/%{name}-%{version}-1.tar.gz
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(appindicator3-0.1)
 BuildRequires:	pkgconfig(gstreamer-1.0)
@@ -49,7 +49,7 @@ that can be inherited by each download in that category.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
         --with-gnutls \
         --without-openssl
 
