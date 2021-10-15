@@ -1,10 +1,13 @@
 %define Werror_cflags %{nil}
 %define iconname %{name}.png
 
+# Workaround duplicate symbols
+%global optflags %{optflags} -fcommon
+
 Summary:	Download manager that uses GTK+
 Name:		uget
 Version:	2.2.3
-Release:	1
+Release:	2
 Group:		Networking/File transfer
 License:	GPL
 Url:		http://ugetdm.com/
