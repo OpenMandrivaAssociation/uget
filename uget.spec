@@ -7,13 +7,15 @@
 Summary:	Download manager that uses GTK+
 Name:		uget
 Version:	2.2.3
-Release:	5
+Release:	6
 Group:		Networking/File transfer
 License:	GPL
-Url:		http://ugetdm.com/
-Source0:	http://downloads.sourceforge.net/urlget/%{name}-%{version}-1.tar.gz
+Url:		https://ugetdm.com/
+Source0:	https://downloads.sourceforge.net/urlget/%{name}-%{version}-1.tar.gz
+Patch0:		uget-2.2.3-use-ayatanta-appindicator.patch
+
 BuildRequires:	desktop-file-utils
-BuildRequires:	pkgconfig(appindicator3-0.1)
+BuildRequires:	pkgconfig(ayatana-appindicator3-0.1)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libcurl)
@@ -49,24 +51,27 @@ that can be inherited by each download in that category.
 #--------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure \
         --with-gnutls \
-        --without-openssl
+		--enable-appindicator \
+        --without-openssl \
+		%nil
 
 %make_build
 
 %install
 %make_install INSTALL="install -p"
 
+# .desktop
 desktop-file-install \
         --dir %{buildroot}%{_datadir}/applications \
         --delete-original \
         %{buildroot}%{_datadir}/applications/%{name}-gtk.desktop
 
-
+# locales
 %find_lang %{name} 
 
 

@@ -1,0 +1,32 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -169,15 +169,15 @@ AC_ARG_ENABLE(
+ 	[enable_appindicator="auto"]
+ )
+ if test x$enable_appindicator = xauto ; then
+-	PKG_CHECK_EXISTS([appindicator3-0.1],
++	PKG_CHECK_EXISTS([ayatana-appindicator3-0.1],
+ 	                 [enable_appindicator="yes"],
+ 	                 [enable_appindicator="no"])
+ fi
+ if test x$enable_appindicator = xyes ; then
+-	PKG_CHECK_MODULES(APP_INDICATOR, appindicator3-0.1)
++	PKG_CHECK_MODULES(APP_INDICATOR, ayatana-appindicator3-0.1)
+ 	AC_SUBST(APP_INDICATOR_CFLAGS)
+ 	AC_SUBST(APP_INDICATOR_LIBS)
+-	AC_DEFINE(HAVE_APP_INDICATOR, 1, [Have AppIndicator])
++	AC_DEFINE(HAVE_APP_INDICATOR, 1, [Have Ayatana AppIndicator])
+ fi
+ 
+ ## ----------------
+--- a/ui-gtk/UgtkTrayIcon.h
++++ b/ui-gtk/UgtkTrayIcon.h
+@@ -41,7 +41,7 @@
+ #include <UgtkConfig.h>
+ 
+ #ifdef HAVE_APP_INDICATOR
+-#include <libappindicator/app-indicator.h>
++#include <libayatana-appindicator/app-indicator.h>
+ #endif
+ 
+ #ifdef __cplusplus
