@@ -14,6 +14,11 @@ Url:		https://ugetdm.com/
 Source0:	https://downloads.sourceforge.net/urlget/%{name}-%{version}-1.tar.gz
 Patch0:		uget-2.2.3-use-ayatanta-appindicator.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(ayatana-appindicator3-0.1)
 BuildRequires:	pkgconfig(gstreamer-1.0)
